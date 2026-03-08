@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Guest List</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Guest List 💙</h2>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Attending</th>
+        </tr>
+
+        {% for rsvp in rsvps %}
+        <tr>
+            <td>{{ rsvp.name }}</td>
+            <td>{{ rsvp.email }}</td>
+            <td>{{ rsvp.attending }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

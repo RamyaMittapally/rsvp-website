@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>💙 Reyansh Annaprasana 💙</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- Invite Section -->
+<div class="invite-section">
+    <img src="/static/images/invite.png" alt="Invite">
+</div>
+
+<!-- Main Layout -->
+<div class="layout">
+
+    
+<div class="image-gallery">
+    <div class="gallery-track">
+        <img src="/static/images/reyansh3.jpeg">
+        <img src="/static/images/Reyansh4.jpeg">
+        <img src="/static/images/reyansh3.jpeg">
+        <img src="/static/images/Reyansh4.jpeg">
+    </div>
+</div>
+    <!-- CENTER RSVP CARD -->
+    <div class="container">
+
+        <h2> RSVP </h2>
+
+        <form method="post" action="/submit">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+
+            <select name="attending">
+                <option value="Yes">Yes, I will attend</option>
+                <option value="No">Sorry, can't make it</option>
+            </select>
+
+            <button type="submit">Submit RSVP</button>
+        </form>
+
+        
+    </div>
+
+
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script src="/static/js/index.js"></script>
+</body>
+</html>
