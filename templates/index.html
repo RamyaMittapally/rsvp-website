@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>💙 Reyansh Annaprasana 💙</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+<title>💙 Reyansh Annaprasana 💙</title>
+<link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
 
-<!-- Invite Section -->
+<!-- Invite Image -->
 <div class="invite-section">
-    <img src="/static/images/invite.png" alt="Invite">
+<img src="/static/images/invite.png">
 </div>
 
-<!-- Main Layout -->
 <div class="layout">
 
-    
+<!-- Image Gallery -->
 <div class="image-gallery">
-    <div class="gallery-track">
-        <img src="/static/images/reyansh3.jpeg">
-        <img src="/static/images/Reyansh4.jpeg">
-        <img src="/static/images/reyansh3.jpeg">
-        <img src="/static/images/Reyansh4.jpeg">
-    </div>
-</div>
-    <!-- CENTER RSVP CARD -->
-    <div class="container">
 
-        <h2> RSVP </h2>
+<div class="gallery-track">
 
-        <form method="post" action="/submit">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-
-            <select name="attending">
-                <option value="Yes">Yes, I will attend</option>
-                <option value="No">Sorry, can't make it</option>
-            </select>
-
-            <button type="submit">Submit RSVP</button>
-        </form>
-
-        
-    </div>
-
+<img src="/static/images/Reyansh4.jpeg" onclick="openModal(this)">
+<img src="/static/images/Reyansh5.jpeg" onclick="openModal(this)">
+<img src="/static/images/Reyansh6.jpeg" onclick="openModal(this)">
 
 </div>
 
-<!-- Modal -->
+</div>
+
+<!-- RSVP Form -->
+<div class="container">
+
+<h2>RSVP</h2>
+
+<form method="post" action="/submit">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="number" name="guests" placeholder="Number of Guests" required>
+
+<select name="attending">
+<option value="Yes">Yes, I will attend</option>
+<option value="No">Sorry, can't make it</option>
+</select>
+
+<button type="submit">Submit RSVP</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- Modal Viewer -->
 <div id="myModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<div class="modal-inner">
+
+<button class="modal-nav left" onclick="changeImage(-1)">&#10094;</button>
+
+<img class="modal-content" id="modalImg">
+
+<button class="modal-nav right" onclick="changeImage(1)">&#10095;</button>
+
+</div>
+
 </div>
 
 <script src="/static/js/index.js"></script>
+
 </body>
 </html>

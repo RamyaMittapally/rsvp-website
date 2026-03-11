@@ -19,28 +19,32 @@ async def submit(
     request: Request,
     name: str = Form(...),
     email: str = Form(...),
+    guests: int = Form(...),
     attending: str = Form(...)
 ):
+
     rsvp_list.append({
         "name": name,
         "email": email,
+        "guests": guests,
         "attending": attending
     })
 
     return templates.TemplateResponse("index.html", {"request": request})
 
-# 🔐 ADMIN PAGE
+
 @app.get("/admin", response_class=HTMLResponse)
 async def admin(request: Request, password: str = ""):
-    if password != "ramya123":   # Change this password!
+
+    if password != "ramya123":
         return HTMLResponse("""
-            <h2>Admin Login</h2>
-            <form>
-                <input type='password' name='password' placeholder='Enter Password'/>
-                <button type='submit'>Login</button>
-            </form>
+        <h2>Admin Login</h2>
+        <form>
+        <input type='password' name='password' placeholder='Enter Password'>
+        <button type='submit'>Login</button>
+        </form>
         """)
-    
+
     return templates.TemplateResponse(
         "admin.html",
         {"request": request, "rsvps": rsvp_list}
